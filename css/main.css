@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(12, 65, 49);
+  background-image: url('./../img/newyear.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+
+  height: 100vh;
+  color: #fff;
+  font-family: 'Rubik', sans-serif;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+
+  overflow: hidden;
+}
+
+/* Темный оверлей */
+body::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.countdown-wrapper {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 60px;
+  margin: 0 0 20px;
+}
+
+.year {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 200px;
+  line-height: 1;
+  z-index: -1;
+  opacity: 0.2;
+}
+
+.countdown {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.time {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 30px;
+}
+
+.time h2 {
+  margin: 0 0 10px;
+  font-size: 48px;
+}
+
+.time small {
+  font-size: 26px;
+}
+
+@media (max-width: 500px) {
+  .title {
+    font-size: 35px;
+  }
+
+  .year {
+    display: none;
+  }
+
+  .countdown {
+    align-items: center;
+  }
+
+  .time {
+    margin: 10px;
+  }
+
+  .time h2 {
+    font-size: 32px;
+    margin: 0;
+  }
+
+  .time small {
+    font-size: 16px;
+  }
+}
+
+
+/*Preloader*/
+
+.lds-heart {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  transform: rotate(45deg);
+  transform-origin: 40px 40px;
+}
+
+.lds-heart div {
+  top: 32px;
+  left: 32px;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  background: #fcf;
+  animation: lds-heart 1.2s infinite cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.lds-heart div:after,
+.lds-heart div:before {
+  content: " ";
+  position: absolute;
+  display: block;
+  width: 32px;
+  height: 32px;
+  background: #fcf;
+}
+
+.lds-heart div:before {
+  left: -24px;
+  border-radius: 50% 0 0 50%;
+}
+
+.lds-heart div:after {
+  top: -24px;
+  border-radius: 50% 50% 0 0;
+}
+
+@keyframes lds-heart {
+  0% {
+    transform: scale(0.95);
+  }
+
+  5% {
+    transform: scale(1.1);
+  }
+
+  39% {
+    transform: scale(0.85);
+  }
+
+  45% {
+    transform: scale(1);
+  }
+
+  60% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(0.9);
+  }
+}
